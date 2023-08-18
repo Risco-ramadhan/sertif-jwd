@@ -15,6 +15,7 @@ sort($kendaraan);
 //	Instruksi Kerja Nomor 6.
 //	Baris Komentar: ......
 require $_SERVER['DOCUMENT_ROOT'] . '/sertif-jwd/perhitungan/hitungSewa.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/sertif-jwd/perhitungan/kelolaData.php';
 
 
 ?>
@@ -95,7 +96,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/sertif-jwd/perhitungan/hitungSewa.php';
 			'nama' => $_POST['nama'],
 			'noHP' => $_POST['noHP'],
 			'kendaraan' => $_POST['kendaraan'],
-			'jarak' => $_POST['jarak']
+			'jarak' => $_POST['jarak'],
 		);
 
 		// Instruksi Kerja Nomor 7
@@ -140,6 +141,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/sertif-jwd/perhitungan/hitungSewa.php';
 		// Instruksi Kerja Nomor 10.
 		// Simpan data pemesanan yang ke dalam file JSON
 		// ...
+		$dataPesanan['Biaya Pesanan'] =  $biaya_sewa;
+		$inputJson = addData($dataPesanan);
 
 
 		// Menampilkan data pemesanan dan total biaya sewa.
